@@ -6,10 +6,14 @@ public class Etl {
     Map<String, Integer> transform(Map<Integer, List<String>> old) {
         Map<String,Integer> map = new HashMap<>();
         for(Integer key:old.keySet()){
-            for(String value:old.get(key)){
-                map.put(value.toLowerCase(),key);
-            }
+            putFromListToMap(old, map, key);
         }
         return map;
+    }
+
+    private void putFromListToMap(Map<Integer, List<String>> old, Map<String, Integer> map, Integer key) {
+        for(String value:old.get(key)){
+            map.put(value.toLowerCase(),key);
+        }
     }
 }
