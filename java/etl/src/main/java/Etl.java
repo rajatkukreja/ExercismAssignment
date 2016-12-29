@@ -11,7 +11,8 @@ public class Etl {
         return map;
     }
 
-    private void putFromListToMap(Map<Integer, List<String>> old, Map<String, Integer> map, Integer key) {
+    private void putFromListToMap(Map<Integer, List<String>> old,
+                                  Map<String, Integer> map, Integer key) {
         for(String value:old.get(key)){
             map.put(value.toLowerCase(),key);
         }
